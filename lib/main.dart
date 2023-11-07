@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:untitled/core/models/todo_repository.dart';
 import 'package:untitled/services/constants/starings.dart';
 import 'package:untitled/services/store_service/local_data_source.dart';
@@ -11,6 +12,8 @@ late final ZikrRepository zikrRepository;
 
 
 void main() async{
+  await ScreenUtil.ensureScreenSize();
+
   WidgetsFlutterBinding.ensureInitialized();
 
   final db = await LocalDataSourceImpl.init;
