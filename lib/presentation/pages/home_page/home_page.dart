@@ -104,8 +104,24 @@ class _HomePageState extends State<HomePage> {
                                                   "assets/images/waveform.png"))),
 
                               ///Zikr sanog'ini 0 ga qaytarish
-                              RefreshZikr(controller: controller)
-                            ],
+                              IconButton(
+                                  onPressed: () {
+                                    setState(() {
+                                      if (controller.cart.items.isNotEmpty) {
+                                        for (int i = 0;
+                                        i < controller.cart.items.length;
+                                        i++) {
+                                          controller.cart.items[i].quantity = 0;
+                                        }
+                                      controller.cart.total = 0;
+                                      }
+                                    });
+                                  },
+                                  icon: const Image(
+                                    image:
+                                    AssetImage("assets/images/refresh.png"),
+                                    width: 24,
+                                  ))                            ],
                           ),
                         ),
                         SizedBox(
