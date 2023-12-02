@@ -54,28 +54,33 @@ class ZikrList extends StatelessWidget {
                                     height: 35,
                                     child: Row(
                                       children: [
-                                        GestureDetector(
-                                          onTap: () {
-                                            if (allZikr.isNotEmpty) {
-                                              controller.removeZikr(
-                                                  id: allZikr[
-                                                  i]
-                                                      .id);
-                                            }
-                                            if (controller.cart.items.isNotEmpty && allZikr.isEmpty) {
-                                              for (int i = 0;
-                                              i < controller.cart.items.length;
-                                              i++) {
-                                                controller.cart.items[i].quantity = 0;
-                                              }
-                                              controller.cart.total = 0;
-                                            }
-                                          },
-                                          child:  Image(
-                                            image: const AssetImage(
-                                                "assets/images/Frame.png"),
-                                            width: 17.sp, height: 17.sp,
-                                          ),
+                                        Builder(
+                                          builder: (context) {
+                                            return GestureDetector(
+                                              onTap: () {
+                                                if (allZikr.isNotEmpty) {
+                                                  controller.removeZikr(
+                                                      id: allZikr[
+                                                      i]
+                                                          .id);
+                                                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Zikr o'chirildi")));
+                                                }
+                                                if (controller.cart.items.isNotEmpty && allZikr.isEmpty) {
+                                                  for (int i = 0;
+                                                  i < controller.cart.items.length;
+                                                  i++) {
+                                                    controller.cart.items[i].quantity = 0;
+                                                  }
+                                                  controller.cart.total = 0;
+                                                }
+                                              },
+                                              child:  Image(
+                                                image: const AssetImage(
+                                                    "assets/images/Frame.png"),
+                                                width: 17.sp, height: 17.sp,
+                                              ),
+                                            );
+                                          }
                                         ),
                                         const SizedBox(width: 10),
                                         SizedBox(width: 150,

@@ -4,7 +4,6 @@ import 'package:just_audio/just_audio.dart';
 import 'package:untitled/core/controllers/zikr_controller.dart';
 import 'package:untitled/core/providers/zikr_provider.dart';
 import 'package:untitled/main.dart';
-import 'package:untitled/presentation/pages/home_page/home_page_views/refresh_zikr.dart';
 import 'package:untitled/presentation/pages/home_page/home_page_views/zikr_count.dart';
 import 'package:untitled/presentation/pages/home_page/home_page_views/zikr_list.dart';
 import 'package:untitled/services/constants/colors.dart';
